@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventanilla Transaccional - Banco GT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#0f172a] text-slate-200 font-sans min-h-screen flex">
+
+    <aside class="w-64 bg-[#1e293b] border-r border-slate-700 flex flex-col justify-between p-4">
+        <div>
+            <div class="flex items-center gap-3 px-2 py-4 mb-6 border-b border-slate-700">
+                <i class="fa-solid fa-building-columns text-2xl text-cyan-400"></i>
+                <span class="font-bold text-lg tracking-wider text-slate-100">BANCO GT</span>
+            </div>
+            <nav class="space-y-2">
+                <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition">
+                    <i class="fa-solid fa-users"></i> Gestión de Clientes
+                </a>
+                <a href="productos.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition">
+                    <i class="fa-solid fa-credit-card"></i> Asignar Productos
+                </a>
+                <a href="caja.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-cyan-500/10 text-cyan-400 font-medium transition">
+                    <i class="fa-solid fa-money-bill-transfer"></i> Ventanilla Transaccional
+                </a>
+            </nav>
+        </div>
+        <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg border border-slate-700">
+            <div class="w-10 h-10 rounded-full bg-cyan-500 flex items-center justify-center font-bold text-slate-900">AD</div>
+            <div>
+                <p class="text-sm font-semibold text-slate-200">Admin_Core</p>
+                <p class="text-xs text-slate-400">Rol: Auditor Interno</p>
+            </div>
+        </div>
+    </aside>
+
+    <main class="flex-1 p-8 overflow-y-auto">
+        <header class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-slate-100 tracking-tight">Ventanilla Transaccional</h1>
+                <p class="text-slate-400 text-sm mt-1">Módulo Operativo de Caja (Tabla: Transacciones y Control de Saldos)</p>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <div class="bg-[#1e293b] p-6 rounded-xl border border-slate-700 shadow-xl">
+                <h2 class="text-lg font-bold text-slate-200 mb-6 flex items-center gap-2 border-b border-slate-700 pb-3">
+                    <i class="fa-solid fa-cash-register text-cyan-400"></i> Ejecutar Movimiento Financiero
+                </h2>
+                
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Tipo de Operación *</label>
+                        <div class="grid grid-cols-3 gap-4">
+                            <label class="flex items-center justify-center gap-2 p-3 bg-[#0f172a] border border-slate-700 rounded-lg cursor-pointer hover:border-cyan-500 transition">
+                                <input type="radio" name="tipo_op" class="text-cyan-500 focus:ring-0"> <span>Depósito</span>
+                            </label>
+                            <label class="flex items-center justify-center gap-2 p-3 bg-[#0f172a] border border-slate-700 rounded-lg cursor-pointer hover:border-cyan-500 transition">
+                                <input type="radio" name="tipo_op" class="text-cyan-500 focus:ring-0"> <span>Retiro</span>
+                            </label>
+                            <label class="flex items-center justify-center gap-2 p-3 bg-[#0f172a] border border-slate-700 rounded-lg cursor-pointer hover:border-cyan-500 transition">
+                                <input type="radio" name="tipo_op" class="text-cyan-500 focus:ring-0"> <span>Transferencia</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Cuenta Origen / Única *</label>
+                            <input type="text" placeholder="Ej. GT-CORE-10293" class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-cyan-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Cuenta Destino (Solo Transferencias)</label>
+                            <input type="text" placeholder="Ej. GT-CORE-88492" class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-cyan-500">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Monto del Movimiento *</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-2 text-slate-500 font-bold">Q</span>
+                                <input type="number" step="0.01" placeholder="0.00" class="w-full bg-[#0f172a] border border-slate-700 rounded-lg pl-9 pr-4 py-2 text-slate-200 focus:outline-none focus:border-cyan-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Sucursal de Operación</label>
+                            <select class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-cyan-500">
+                                <option value="1">Central Metropolitana</option>
+                                <option value="2">Occidente</option>
+                                <option value="3">Interior</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-600 text-slate-900 font-bold py-3 rounded-lg shadow-lg shadow-cyan-500/10 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-vault"></i> Procesar e Inyectar Transacción
+                    </button>
+                </form>
+            </div>
+
+            <div class="bg-[#1e293b] p-6 rounded-xl border border-slate-700 shadow-xl flex flex-col justify-between">
+                <div>
+                    <h2 class="text-lg font-bold text-slate-200 mb-4 flex items-center gap-2 border-b border-slate-700 pb-3">
+                        <i class="fa-solid fa-clock-rotate-left text-purple-400"></i> Historial Reciente de Operaciones
+                    </h2>
+                    <p class="text-xs text-slate-400 mb-4">Registro en tiempo real de la tabla HistorialOperacionesUsuarios</p>
+                    
+                    <div class="space-y-3">
+                        <div class="bg-[#0f172a] p-3 rounded-lg border border-slate-800 text-xs flex justify-between items-center">
+                            <div>
+                                <span class="text-emerald-400 font-bold uppercase mr-2">[ÉXITO]</span>
+                                <span class="text-slate-300">INSERT - Nueva Cuenta ID: 12</span>
+                            </div>
+                            <span class="text-slate-500">Hace 2 min</span>
+                        </div>
+                        <div class="bg-[#0f172a] p-3 rounded-lg border border-slate-800 text-xs flex justify-between items-center">
+                            <div>
+                                <span class="text-emerald-400 font-bold uppercase mr-2">[ÉXITO]</span>
+                                <span class="text-slate-300">INSERT - Nuevo Cliente ID: 8</span>
+                            </div>
+                            <span class="text-slate-500">Hace 15 min</span>
+                        </div>
+                        <div class="bg-[#0f172a] p-3 rounded-lg border border-slate-800 text-xs flex justify-between items-center">
+                            <div>
+                                <span class="text-rose-400 font-bold uppercase mr-2">[RECHAZADO]</span>
+                                <span class="text-slate-400">UPDATE - Saldo Insuficiente en Cuenta 4</span>
+                            </div>
+                            <span class="text-slate-500">Hace 1 hora</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-purple-500/5 border border-purple-500/20 p-4 rounded-xl text-xs text-purple-300 mt-6 flex items-start gap-3">
+                    <i class="fa-solid fa-shield-halved text-base text-purple-400 mt-0.5"></i>
+                    <div>
+                        <p class="font-bold mb-1">Mecanismo ACID Activo</p>
+                        <p class="leading-relaxed">Cualquier error transaccional disparará el TRY-CATCH del BackEnd aplicando un ROLLBACK inmediato para proteger las tablas de Cuentas y Transacciones.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

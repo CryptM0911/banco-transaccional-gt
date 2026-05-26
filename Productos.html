@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos Financieros - Banco GT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#0f172a] text-slate-200 font-sans min-h-screen flex">
+
+    <aside class="w-64 bg-[#1e293b] border-r border-slate-700 flex flex-col justify-between p-4">
+        <div>
+            <div class="flex items-center gap-3 px-2 py-4 mb-6 border-b border-slate-700">
+                <i class="fa-solid fa-building-columns text-2xl text-cyan-400"></i>
+                <span class="font-bold text-lg tracking-wider text-slate-100">BANCO GT</span>
+            </div>
+            <nav class="space-y-2">
+                <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition">
+                    <i class="fa-solid fa-users"></i> Gestión de Clientes
+                </a>
+                <a href="productos.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-cyan-500/10 text-cyan-400 font-medium transition">
+                    <i class="fa-solid fa-credit-card"></i> Asignar Productos
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition">
+                    <i class="fa-solid fa-money-bill-transfer"></i> Ventanilla Transaccional
+                </a>
+            </nav>
+        </div>
+        <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg border border-slate-700">
+            <div class="w-10 h-10 rounded-full bg-cyan-500 flex items-center justify-center font-bold text-slate-900">AD</div>
+            <div>
+                <p class="text-sm font-semibold text-slate-200">Admin_Core</p>
+                <p class="text-xs text-slate-400">Rol: Auditor Interno</p>
+            </div>
+        </div>
+    </aside>
+
+    <main class="flex-1 p-8 overflow-y-auto">
+        <header class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-slate-100 tracking-tight">Asignación de Productos</h1>
+                <p class="text-slate-400 text-sm mt-1">Apertura de Cuentas, Tarjetas y Préstamos vinculados al Cliente</p>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-[#1e293b] p-6 rounded-xl border border-slate-700 shadow-xl flex flex-col justify-between">
+                <div>
+                    <h2 class="text-lg font-bold text-slate-200 mb-4 flex items-center gap-2 border-b border-slate-700 pb-3">
+                        <i class="fa-solid fa-wallet text-cyan-400"></i> Tabla: Cuentas
+                    </h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">ID Cliente Solicitante *</label>
+                            <input type="number" placeholder="Ej. 14" class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-cyan-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Tipo de Cuenta</label>
+                            <select class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-cyan-500">
+                                <option>Monetaria</option>
+                                <option>Ahorro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Moneda (Tabla Monedas)</label>
+                            <select class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-cyan-500">
+                                <option>GTQ - Quetzales</option>
+                                <option>USD - Dólares</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button class="w-full bg-cyan-500 hover:bg-cyan-600 text-slate-900 font-bold py-2.5 rounded-lg transition mt-6">
+                    Aperturar Cuenta
+                </button>
+            </div>
+
+            <div class="bg-[#1e293b] p-6 rounded-xl border border-slate-700 shadow-xl flex flex-col justify-between">
+                <div>
+                    <h2 class="text-lg font-bold text-slate-200 mb-4 flex items-center gap-2 border-b border-slate-700 pb-3">
+                        <i class="fa-solid fa-credit-card text-purple-400"></i> Tablas: Tarjetas + Límites
+                    </h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Número de Tarjeta *</label>
+                            <input type="text" placeholder="16 dígitos de plástico" class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-purple-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Tipo de Tarjeta</label>
+                            <select class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-purple-500">
+                                <option>Débito</option>
+                                <option>Crédito Visa Oro</option>
+                                <option>Crédito Mastercard Black</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Límite Máximo Otorgado (Q)</label>
+                            <input type="number" placeholder="Ej. 15000.00" class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-purple-500">
+                        </div>
+                    </div>
+                </div>
+                <button class="w-full bg-purple-500 hover:bg-purple-600 text-white font-bold py-2.5 rounded-lg transition mt-6">
+                    Emitir Tarjeta Activa
+                </button>
+            </div>
+
+            <div class="bg-[#1e293b] p-6 rounded-xl border border-slate-700 shadow-xl flex flex-col justify-between">
+                <div>
+                    <h2 class="text-lg font-bold text-slate-200 mb-4 flex items-center gap-2 border-b border-slate-700 pb-3">
+                        <i class="fa-solid fa-hand-holding-dollar text-amber-400"></i> Tabla: Préstamos
+                    </h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Tipo de Préstamo</label>
+                            <select class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-amber-500">
+                                <option>Personal</option>
+                                <option>Hipotecario</option>
+                                <option>Prendario</option>
+                                <option>Fiduciario / Planilla</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Monto del Financiamiento</label>
+                            <input type="number" placeholder="Monto aprobado" class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Tasa Interés (%)</label>
+                                <input type="number" placeholder="12.5" class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-amber-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Plazo (Meses)</label>
+                                <input type="number" placeholder="48" class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-amber-500">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-2.5 rounded-lg transition mt-6">
+                    Desembolsar Crédito
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
