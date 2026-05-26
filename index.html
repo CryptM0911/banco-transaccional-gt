@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Bancario Transaccional GT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#0f172a] text-slate-200 font-sans min-h-screen flex">
+
+    <aside class="w-64 bg-[#1e293b] border-r border-slate-700 flex flex-col justify-between p-4">
+        <div>
+            <div class="flex items-center gap-3 px-2 py-4 mb-6 border-b border-slate-700">
+                <i class="fa-solid fa-building-columns text-2xl text-cyan-400"></i>
+                <span class="font-bold text-lg tracking-wider text-slate-100">BANCO GT</span>
+            </div>
+            
+            <nav class="space-y-2">
+                <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-cyan-500/10 text-cyan-400 font-medium transition">
+                    <i class="fa-solid fa-users"></i> Gestión de Clientes
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition">
+                    <i class="fa-solid fa-credit-card"></i> Asignar Productos
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition">
+                    <i class="fa-solid fa-money-bill-transfer"></i> Ventanilla Transaccional
+                </a>
+            </nav>
+        </div>
+        
+        <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg border border-slate-700">
+            <div class="w-10 h-10 rounded-full bg-cyan-500 flex items-center justify-center font-bold text-slate-900">
+                AD
+            </div>
+            <div>
+                <p class="text-sm font-semibold text-slate-200">Admin_Core</p>
+                <p class="text-xs text-slate-400">Rol: Auditor Interno</p>
+            </div>
+        </div>
+    </aside>
+
+    <main class="flex-1 p-8 overflow-y-auto">
+        <header class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-slate-100 tracking-tight">Módulo de Clientes</h1>
+                <p class="text-slate-400 text-sm mt-1">Onboarding y Registro Base de Usuarios (Tabla Clientes)</p>
+            </div>
+            <div class="text-sm bg-slate-800 px-4 py-2 rounded-lg border border-slate-700 text-slate-300">
+                <i class="fa-solid fa-circle text-emerald-400 text-xs mr-2 animate-pulse"></i> Conectado a SQL Server
+            </div>
+        </header>
+
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-[#1e293b] p-6 rounded-xl border border-slate-700 shadow-xl">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-slate-400 text-sm font-medium">Clientes Activos</span>
+                    <i class="fa-solid fa-user-check text-cyan-400"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-100">33</h3>
+                <p class="text-xs text-emerald-400 mt-1"><i class="fa-solid fa-arrow-up"></i> Sincronizado con DWH</p>
+            </div>
+            <div class="bg-[#1e293b] p-6 rounded-xl border border-slate-700 shadow-xl">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-slate-400 text-sm font-medium">Cuentas Aperturadas</span>
+                    <i class="fa-solid fa-wallet text-purple-400"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-100">48</h3>
+                <p class="text-xs text-slate-400 mt-1">Monetarias y Ahorros</p>
+            </div>
+            <div class="bg-[#1e293b] p-6 rounded-xl border border-slate-700 shadow-xl">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-slate-400 text-sm font-medium">Capital Operado (OLTP)</span>
+                    <i class="fa-solid fa-coins text-amber-400"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-100">Q370.77M</h3>
+                <p class="text-xs text-amber-400 mt-1">Volumen Transaccional Real</p>
+            </div>
+        </section>
+
+        <section class="bg-[#1e293b] p-6 rounded-xl border border-slate-700 shadow-xl mb-8">
+            <h2 class="text-xl font-bold text-slate-200 mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-user-plus text-cyan-400"></i> Formulario de Registro Corporativo e Individual
+            </h2>
+            
+            <form class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Nombres *</label>
+                    <input type="text" placeholder="Ej. Juan Carlos" class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-cyan-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Apellidos *</label>
+                    <input type="text" placeholder="Ej. Pérez Gómez" class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-cyan-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">DPI / Pasaporte *</label>
+                    <input type="text" placeholder="13 dígitos sin espacios" class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-cyan-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">NIT *</label>
+                    <input type="text" placeholder="Ej. 1234567-K" class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-cyan-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Sucursal de Origen</label>
+                    <select class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-cyan-500 transition">
+                        <option value="1">Sucursal 1 - Central Metropolitana</option>
+                        <option value="2">Sucursal 2 - Occidente (Xela)</option>
+                        <option value="3">Sucursal 3 - Interior (Petén)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Fecha de Nacimiento</label>
+                    <input type="date" class="w-full bg-[#0f172a] border border-slate-700 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-cyan-500 transition">
+                </div>
+                
+                <div class="md:col-span-3 flex justify-end mt-4">
+                    <button type="submit" class="bg-cyan-500 hover:bg-cyan-600 text-slate-900 font-bold px-8 py-3 rounded-lg shadow-lg shadow-cyan-500/20 transition flex items-center gap-2">
+                        <i class="fa-solid fa-floppy-disk"></i> Registrar y Auditar en SQL
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>
